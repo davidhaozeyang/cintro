@@ -1,0 +1,19 @@
+Text input and output and parsing using getchar, gets, and getline.
+
+Reading characters, trouble with gets
+
+What functions can be used for getting characters from stdin and writing them to stdout?
+	getchar() and gets() can get from stdin.
+	putchar(), printf() and puts() can write to stdout.
+
+Name one issue with gets().
+	stdin can overflow the buffer of gets()
+
+Introducing sscanf and friends
+
+Write code that parses the string "Hello 5 World" and initializes 3 variables to "Hello", 5, and "World".
+getline is useful
+
+What does one need to define before including getline()?
+	#define _GNU_SOURCE
+Write a C program to print out the content of a file line-by-line using getline().

@@ -1,0 +1,27 @@
+Program arguments, environment variables, and working with character arrays (strings)
+
+Program arguments, argc, argv
+
+What are two ways to find the length of argv?
+	1. Call argc
+	2. Loop through argv until reaches nil
+What does argv[0] represent?
+	1. The name of the program
+
+Environment Variables
+
+Where are the pointers to environment variables stored (on the stack, the heap, somewhere else)?
+	- Environment variables are stored together with command line arguments at the top of the process memory layout, above the stack.
+String searching (strings are just char arrays)
+
+On a machine where pointers are 8 bytes, and with the following code:
+char *ptr = "Hello";
+char array[] = "Hello";
+What are the values of sizeof(ptr) and sizeof(array)? Why?
+	- sizeof(ptr) is 8 bytes, because it's just a pointer pointing to the first memory location
+	- sizeof(array) is 6 bytes, because sizeof() will count the all the char until it sees '/0'
+
+Lifetime of automatic variables
+
+What data structure manages the lifetime of automatic variables?
+	- Stack

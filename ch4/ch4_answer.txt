@@ -1,0 +1,37 @@
+Chapter 4
+
+Heap and stack memory, and working with structs
+
+Memory allocation using malloc, the heap, and time
+
+If I want to use data after the lifetime of the function it was created in ends, where should I put it? How do I put it there?
+	- Use malloc to allocate memory in Heap.
+What are the differences between heap and stack memory?
+	- Stack memory has the lifetime of a function. Heap memory can be allocated and freed at anytime.
+Are there other kinds of memory in a process?
+	- Static memory 
+Fill in the blank: "In a good C program, for every malloc, there is a ___".
+	- free()
+Heap allocation gotchas
+
+What is one reason malloc can fail?
+	- malloc cannot allocate enough heap memory requested.
+What are some differences between time() and ctime()?
+	- time() returns the seconds since a epoch. ctime() convert the return of time() to a readable charater string.
+What is wrong with this code snippet?
+free(ptr);
+free(ptr);
+	- You not free the same piece of memory twice.
+What is wrong with this code snippet?
+free(ptr);
+printf("%s\n", ptr);
+	- ptr points invalid memory after it's been freed.
+How can one avoid the previous two mistakes?
+	- Set the pointer to NULL
+	
+struct, typedefs, and a linked list
+Create a struct that represents a Person. Then make a typedef, so that struct Person can be replaced with a single word. A person should contain the following information: their name (a string), their age (an integer), and a list of their friends (stored as a pointer to an array of pointers to Persons).
+Now, make two persons on the heap, "Agent Smith" and "Sonny Moore", who are 128 and 256 years old respectively and are friends with each other.
+Duplicating strings, memory allocation and deallocation of structures
+
+Create functions to create and destroy a Person (Person's and their names should live on the heap). 12. create() should take a name and age. The name should be copied onto the heap. Use malloc to reserve sufficient memory for everyone having up to ten friends. Be sure initialize all fields (why?). 13. destroy() should free up not only the memory of the person struct, but also free all of its attributes that are stored on the heap. Destroying one person should not destroy any others.

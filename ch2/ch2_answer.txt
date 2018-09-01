@@ -1,0 +1,50 @@
+Chapter 2
+
+Sizing up C types and their limits, int and char arrays, and incrementing pointers
+
+Not all bytes are 8 bits?
+
+How many bits are there in a byte?
+	At least 8
+
+How many bytes are there in a char?
+	1
+
+How many bytes the following are on your machine?
+int, double, float, long, and long long
+	int - 4
+	double - 8
+	float - 4
+	long - 4
+	long long - 8
+
+Follow the int pointer
+
+On a machine with 8 byte integers:
+int main(){
+    int data[8];
+} 
+If the address of data is 0x7fbd9d40, then what is the address of data+2?
+	0x7fbd9d48
+
+
+What is data[3] equivalent to in C?
+Hint: what does C convert data[3] to before dereferencing the address?
+	0x7fbd9d4c
+
+sizeof character arrays, incrementing pointers
+
+Remember, the type of a string constant "abc" is an array.
+
+Why does this segfault?
+char *ptr = "hello";
+*ptr = 'J';
+	String is immutable 
+What does sizeof("Hello\0World") return?
+	12
+What does strlen("Hello\0World") return?
+	5
+Give an example of X such that sizeof(X) is 3.
+	"bfr"
+Give an example of Y such that sizeof(Y) might be 4 or 8 depending on the machine.
+	A pointer is 4 bytes on 32bits machines and 8 bytes on 64bits machines
